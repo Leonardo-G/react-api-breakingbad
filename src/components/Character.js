@@ -1,16 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { SeeCharacter } from './SeeCharacter';
-import { ShowInfoCharacter } from './ShowInfoCharacter';
 
 export const Character = (characterInfo) => {
 
-    const { char_id: id, name, img } = characterInfo
-
-    const [showInfo, setShowInfo] = useState({
-        show: false,
-        id: id
-    })
-
+    const { char_id: id, name, img, handleShowCharacter } = characterInfo
+    console.log("Ejecutandose desde Character")
     return (
         <>
             <div 
@@ -23,7 +17,7 @@ export const Character = (characterInfo) => {
                     <h2 className="character__info--name">{ name }</h2>
                 </div>
                 {
-                    <SeeCharacter id={ id }/>
+                    <SeeCharacter handleShowCharacter={ handleShowCharacter } id={ id }/>
                 }
             </div>
         </>
