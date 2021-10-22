@@ -20,12 +20,14 @@ export const Cast = () => {
     }, [])
 
     return (
-        <div className="personajes">
-            {
-                arrayCharacters.map(character => (
-                    <Character key={character.char_id}/>
-                ))
-            }
+        <div className="container">
+            <div className="CastGrid">
+                {
+                    arrayCharacters.map(character => (
+                        <Character key={character.char_id} {...character}/>
+                    ))
+                }
+            </div>
         </div>
     )
 }

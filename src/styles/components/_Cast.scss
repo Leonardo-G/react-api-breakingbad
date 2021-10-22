@@ -1,0 +1,11 @@
+.container{
+    width: min(90%, 120rem);
+    margin: 5rem auto;
+}
+
+.CastGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    row-gap: 3rem;
+    column-gap: 3rem;
+}

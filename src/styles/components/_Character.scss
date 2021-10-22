@@ -1,0 +1,29 @@
+.character{
+    height: 50rem;
+    position: relative;
+    .character__info{
+        position: absolute;
+        top: 90%;
+        left: 50%;
+    }
+    .character__info--name{
+        font-size: 2rem;
+        color: #fff;
+    }
+    .character__iconView{
+        position: absolute;
+        top: 90%;
+        left: 10%;
+        font-size: 2rem;
+        background-color: #fff;
+        padding: 0.5rem;
+        border-radius: 20%;
+        visibility: hidden;
+        opacity: 0;
+        cursor: pointer;
+    }
+    &:hover .character__iconView{
+        visibility: visible;
+        opacity: 1;
+    }
+}
