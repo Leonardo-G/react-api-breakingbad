@@ -8,21 +8,26 @@ export const Cast = () => {
     const [characterInfo, setCharacterInfo] = useState({});
     const [showInfo, setShowInfo] = useState(false);
 
-    const consultApi = () => {
-        const url = "https://www.breakingbadapi.com/api/characters?limit=20&offset=0";
+    const [limit] = useState(20)
+    const [initialCharacters, setInitialCharacters] = useState(0)
+
+    const consultApi = (limitCharacter, initialCharacters) => {
+        const url = `https://www.breakingbadapi.com/api/characters?limit=${limitCharacter}&offset=${initialCharacters}`;
         fetch(url, {
             method: "GET"
         })
         .then(resp => resp.json())
         .then(resul => {
-            setArrayCharacters([...resul])
+            setArrayCharacters([...arrayCharacters, ...resul])
         })
         .catch(err => console.log(err))
     }
     
     useEffect(() =>{
-        consultApi()
-    }, [])
+        consultApi(limit, initialCharacters)
+
+       // eslint-disable-next-line 
+    }, [initialCharacters])
 
     const handleShowCharacter = (id) => {
         const objectCharacter = arrayCharacters.filter( character => character.char_id === id);
@@ -48,8 +53,10 @@ export const Cast = () => {
         const objectCharacter = arrayCharacters.filter( character => character.char_id === (id + 1));
         setCharacterInfo({...objectCharacter[0]})
     }
-    
-    console.log("Ejecutandose")
+
+    const handleShowMoreCharacter = () => {
+        setInitialCharacters( initialCharacters + 20)
+    }
 
     return (
         <>
@@ -61,8 +68,14 @@ export const Cast = () => {
                         ))
                     }
                 </div>
+                {   //Cantidad maxima de personajes, segun la API
+                    (arrayCharacters.length < 62) &&
+                    <button 
+                        className="btn"
+                        onClick={ handleShowMoreCharacter }
+                    >View more...</button>
+                }
             </div>
-            
             {
                 showInfo &&
                 <ShowInfoCharacter {...characterInfo} handlePrevious={ handlePrevious } handleNext={ handleNext }/>

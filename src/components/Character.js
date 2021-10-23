@@ -3,8 +3,7 @@ import { SeeCharacter } from './SeeCharacter';
 
 export const Character = (characterInfo) => {
 
-    const { char_id: id, name, img, handleShowCharacter } = characterInfo
-    console.log("Ejecutandose desde Character")
+    const { char_id: id, name, img, handleShowCharacter } = characterInfo;
     return (
         <>
             <div 

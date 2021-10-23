@@ -19,3 +19,21 @@ img{
 p, h1, h2{
     font-family: 'Roboto', sans-serif;
 }
+
+.btn{
+    background-color: #000;
+    padding: 1rem 2rem;
+    color: #fff;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    margin: 0 auto;
+    border: 1px solid #000;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.747);
+        border: 1px solid rgba(0, 0, 0, 0.315);
+    }
+}

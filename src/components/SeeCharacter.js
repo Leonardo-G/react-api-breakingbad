@@ -7,7 +7,7 @@ export const SeeCharacter = ({ id, handleShowCharacter}) => {
     return (
         <div 
             className="character__iconView"   
-            onClick={ e => handleShowCharacter(id) }
+            onClick={ () => handleShowCharacter(id) }
         >
             <FontAwesomeIcon icon={ faEye } />
         </div>
