@@ -1,19 +1,23 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 
-export const ShowInfoCharacter = ({char_id, name, birthday, occupation, img, status, nickname, portrayed, category, handlePrevious, handleNext}) => {
+export const ShowInfoCharacter = ({ name, birthday, occupation, img, status, nickname, portrayed, category, handlePrevious, handleNext, handleClose}) => {
    
-    
-
 
     return (
         <div className="showInfo">
             <div className="containerInfo">
                 <div 
+                    className="otherCharacter otherCharacter--close"
+                    onClick={ handleClose }
+                >
+                    <FontAwesomeIcon icon={ faTimesCircle } /> 
+                </div>
+                <div 
                     className="otherCharacter otherCharacter--after"
-                    onClick={ () => handlePrevious(char_id) }    
+                    onClick={ () => handlePrevious() }    
                 >
                     <FontAwesomeIcon icon={ faChevronLeft } />
                 </div>
@@ -31,7 +35,7 @@ export const ShowInfoCharacter = ({char_id, name, birthday, occupation, img, sta
                 </div>
                 <div 
                     className="otherCharacter otherCharacter--previous"
-                    onClick={ () => handleNext(char_id) }
+                    onClick={ () => handleNext() }
                 >
                     <FontAwesomeIcon icon={ faChevronRight } />
                 </div>

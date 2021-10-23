@@ -3,7 +3,7 @@ import { SeeCharacter } from './SeeCharacter';
 
 export const Character = (characterInfo) => {
 
-    const { char_id: id, name, img, handleShowCharacter } = characterInfo;
+    const { char_id: id, name, img, handleShowCharacter, index } = characterInfo;
     return (
         <>
             <div 
@@ -16,7 +16,7 @@ export const Character = (characterInfo) => {
                     <h2 className="character__info--name">{ name }</h2>
                 </div>
                 {
-                    <SeeCharacter handleShowCharacter={ handleShowCharacter } id={ id }/>
+                    <SeeCharacter handleShowCharacter={ handleShowCharacter } id={ id } index={index}/>
                 }
             </div>
         </>
