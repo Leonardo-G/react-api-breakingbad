@@ -7,13 +7,29 @@
 html{
     box-sizing: border-box;
     font-size: 62.5%;
+    scrollbar-color: yellow #800080;
+    scrollbar-width: 10px;
 }
+
+body::-webkit-scrollbar{
+    width: 8px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: #000;
+    border-radius: 10px;
+}
+
 
 img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center center;
+}
+
+a{
+    text-decoration: none;
 }
 
 p, h1, h2{

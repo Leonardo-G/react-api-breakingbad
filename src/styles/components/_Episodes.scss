@@ -1,0 +1,54 @@
+.seasons{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    column-gap: 2rem;
+    row-gap: 1rem;
+    img{
+        height: 40rem;
+    }
+    .season{
+        position: relative;
+        .btn--season{
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            &:hover{
+                background-color: #fff;
+                color: #000;
+            }
+        }
+    }
+}
+
+//Episodes
+.titleSeason{
+    text-align: center;
+    margin-bottom: 5rem;
+    font-size: 3rem;
+}
+
+.gridEpisodes{
+    margin: 0 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    column-gap: 4rem;
+    row-gap: 4rem;
+    line-height: 30px;
+    .episode{
+        border: 1px solid #66B22E;
+        padding: 2rem;
+        border-radius: 20px;
+    }
+    p{
+        font-size: 2rem;
+    }
+    .episode__character{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .cP{
+        margin: 0 1rem;
+    }
+}
