@@ -6,6 +6,7 @@ import {
     Link
   } from "react-router-dom";
 import { Cast } from '../components/Cast';
+import { Quotes } from '../components/quotes/Quotes';
 
 export const AppRouter = () => {
     return (
@@ -21,7 +22,7 @@ export const AppRouter = () => {
             </nav>
 
             <Switch>
-                <Route path="/frases"/>
+                <Route path="/frases" component={ Quotes }/>
                 <Route path="/personajes"/>
                 <Route path="/episodios"/>
                 <Route path="/" component={ Cast }/>
