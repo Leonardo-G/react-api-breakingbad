@@ -1,16 +1,18 @@
 .nav{
+    background-color: #66B22E;
     .nav__links{   
         display: flex;
         width: min(95%, 120rem);
         justify-content: space-around;
         margin: 0 auto;
+        font-size: 1.6rem;
     }
     .enlace{
-        padding: 1rem 2rem;
+        padding: 2rem;
         color: #000;
         text-decoration: none;
         &:hover{
-            background-color:#66B22E;
+            background-color:#fff;
         }
     }
 }
